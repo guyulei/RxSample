@@ -2,6 +2,7 @@ package com.helin.rxsample.http;
 
 /**
  * Created by helin on 2016/10/10 11:52.
+ * 预处理 错误 结果 返回
  */
 
 public class ApiException extends RuntimeException{

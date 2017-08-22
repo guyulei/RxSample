@@ -7,9 +7,20 @@ package com.helin.rxsample.enity;
 public class HttpResult<T> {
 
     //用来模仿resultCode和resultMessage
-    private int count;
+    private int    count;
     //用来模仿Data
-    private T subjects;
+    private T      subjects;
+    private int    start;
+    private int    total;
+    private String title;
+
+    public T getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(T subjects) {
+        this.subjects = subjects;
+    }
 
     public int getCount() {
         return count;
@@ -42,46 +53,4 @@ public class HttpResult<T> {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    public T getSubjects() {
-        return subjects;
-    }
-
-    public void setSubjects(T subjects) {
-        this.subjects = subjects;
-    }
-
-    private int start;
-    private int total;
-    private String title;
-
-//    public T getData() {
-//        return data;
-//    }
-//
-//    public void setData(T data) {
-//        this.data = data;
-//    }
-//
-//    private int code;
-//
-//    public int getCode() {
-//        return code;
-//    }
-//
-//    public void setCode(int code) {
-//        this.code = code;
-//    }
-//
-//    public String getMessage() {
-//        return message;
-//    }
-//
-//    public void setMessage(String message) {
-//        this.message = message;
-//    }
-//
-//    private String message;
-//
-//    private T data;
 }

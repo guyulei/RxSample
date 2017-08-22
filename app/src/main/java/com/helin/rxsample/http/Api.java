@@ -14,6 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by helin on 2016/11/10 10:28.
+ * 此类就是初始化 Retrofit，提供一个静态方法初始化
  */
 
 public class Api {
@@ -31,17 +32,12 @@ public class Api {
 
             /**
              *  拦截器
+             *  对所有请求 添加 请求头
              */
             httpClientBuilder.addInterceptor(new Interceptor() {
                 @Override
                 public okhttp3.Response intercept(Chain chain) throws IOException {
                     Request request = chain.request();
-
-//                    Request.Builder requestBuilder = request.newBuilder();
-//                    RequestBody formBody = new FormBody.Builder()
-//                            .add("1","2")
-//                            .build();
-
                     HttpUrl.Builder authorizedUrlBuilder = request.url()
                             .newBuilder()
                             //添加统一参数 如手机唯一标识符,token等
@@ -54,9 +50,6 @@ public class Api {
                             .method(request.method(), request.body())
                             .url(authorizedUrlBuilder.build())
                             .build();
-
-//                    okhttp3.Response originalResponse = chain.proceed(request);
-//                    return originalResponse.newBuilder().header("mobileFlag", "adfsaeefe").addHeader("type", "4").build();
                     return  chain.proceed(newRequest);
                 }
             });

@@ -15,6 +15,8 @@ import rx.subjects.PublishSubject;
 
 /**
  * Created by helin on 2016/11/9 17:02.
+ * 对返回的 结果 进行 预处理
+ * 对 code 进行判断和解析，不同的错误返回不同的错误信息，
  */
 
 public class RxHelper {
@@ -73,13 +75,6 @@ public class RxHelper {
             }
         };
     }
-
-    /**
-     *
-     *
-     */
-
-
     /**
      * 创建成功的数据
      *
@@ -99,7 +94,5 @@ public class RxHelper {
                 }
             }
         });
-
     }
-
 }

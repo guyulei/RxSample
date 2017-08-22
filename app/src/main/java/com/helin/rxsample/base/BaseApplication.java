@@ -12,6 +12,6 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Hawk.init(this).build();
+        Hawk.init(this).build();//缓存
     }
 }

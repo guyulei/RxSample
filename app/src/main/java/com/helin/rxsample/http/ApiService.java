@@ -13,6 +13,7 @@ import rx.Observable;
 
 /**
  * Created by helin on 2016/10/9 17:09.
+ * retrofit 接口
  */
 
 public interface ApiService {
